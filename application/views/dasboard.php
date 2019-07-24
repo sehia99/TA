@@ -1,67 +1,16 @@
+<?php
+ defined('BASEPATH') OR exit('No direct script access allowed');
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Payment Lulasari</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/dist/css/adminlte.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/daterangepicker/daterangepicker-bs3.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <?php $this->load->view("_partials/head.php")  ?>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <a href="<?php echo base_url().'index.php/login/logout' ?>">Logout</a>
-    </ul>
-  </nav>
+  <?php $this->load->view("_partials/navbar.php");  ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
@@ -73,86 +22,8 @@
       <span class="brand-text font-weight-light">E-Payment Lulasari</span>
     </a>
 
-    <!-- Sidebar 
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) 
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-      </div>
-      -->
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-dashboard"></i>
-              <p>
-                User
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Data</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Register</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!-- admin -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-dashboard"></i>
-              <p>
-                Admin
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Data</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Register</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
+    <!-- Sidebar -->
+    <?php $this->load->view("_partials/sidebar.php");  ?>
     <!-- /.sidebar -->
   </aside>
 
@@ -248,14 +119,17 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-alpha
+  <!-- Sticky Footer 
+<footer class="sticky-footer">
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright © <?php echo "Lulasari". Date('Y') ?></span>
     </div>
-  </footer>
-
+  </div>
+</footer>
+-->
+<!-- footer-->
+<?php $this->load->view("_partials/footer.php");?>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -265,41 +139,6 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/dist/js/demo.js"></script>
+<?php $this->load->view("_partials/jquery.php");  ?>
 </body>
 </html>

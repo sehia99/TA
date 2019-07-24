@@ -28,15 +28,18 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg"></p>
 
-      <form action="<?php echo base_url().'index.php/register/aksi_l' ?>" method="post">
-        <div class="form-group has-feedback">
-          <input type="text"  class="form-control" placeholder="Username">
+      <form action="<?php echo base_url().'index.php/register' ?>" method="post">
+      <div class="form-group has-feedback">
+          <input type="text" name="name" class="form-control" placeholder="Name">
+        </div>  
+      <div class="form-group has-feedback">
+          <input type="text" name="username" class="form-control" placeholder="Username">
         </div>
         <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" name="email" class="form-control" placeholder="Email">
         </div>
         <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
         <div class="row">
           

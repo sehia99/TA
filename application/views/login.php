@@ -28,15 +28,15 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="<?php echo base_url().'index.php/login/aksi_l' ?>" method="post">
+      <form action="<?php echo base_url().'index.php/login' ?>" method="post">
         <div class="form-group has-feedback">
         <!--<span class="fa fa-envelope form-control-feedback"></span> -->
-          <input type="text"  class="form-control" placeholder="Username">
+          <input type="text"  name="username" class="form-control" placeholder="Username">
           
         </div>
         <div class="form-group has-feedback">
         <!--<span class="fa fa-lock form-control-feedback"></span> -->
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password">
           
         </div>
         <div class="row">

@@ -1,43 +1,35 @@
-<?php 
+<?php
+ defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Register extends CI_Controller{
+ class Register extends CI_Controller {
+     
+     function __construct(){
+         parent::__construct();
+         $this->load->library(array('form_validation'));
+         $this->load->helper(array('url','form'));
+         $this->load->model('m_daftar'); //call model
+     }
  
-	function __construct(){
-		parent::__construct();		
-		$this->load->model('m_login');
+     public function index() {
  
-	}
+         $this->form_validation->set_rules('name', 'NAME','required');
+         $this->form_validation->set_rules('username', 'USERNAME','required');
+         $this->form_validation->set_rules('email','EMAIL','required|valid_email');
+         $this->form_validation->set_rules('password','PASSWORD','required');
+         if($this->form_validation->run() == FALSE) {
+             $this->load->view('register');
+         }else{
  
-	public function index(){
-		$this->load->view('register');
-	}
+             $data['nama']   =    $this->input->post('name');
+             $data['username'] =    $this->input->post('username');
+             $data['email']  =    $this->input->post('email');
+             $data['password'] =    md5($this->input->post('password'));
  
-	public function aksi_l(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$where = array(
-			'username' => $username,
-			'password' => md5($password)
-			);
-		$cek = $this->m_login->cek_login("user",$where)->num_rows();
-		if($cek > 0){
- 
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
-				);
- 
-			$this->session->set_userdata($data_session);
- 
-			redirect(base_url().'index.php/auth');
- 
-		}else{
-			echo "Username dan password salah !";
-		}
-	}
- 
-	function logout(){
-		$this->session->sess_destroy();
-		redirect(base_url(''));
-	}
-}
+             $this->m_daftar->daftar($data);
+             
+             $pesan['message'] =    "Pendaftaran berhasil";
+             
+             $this->load->view('login');
+         }
+     }
+ }

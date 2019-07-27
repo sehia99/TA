@@ -4,26 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php $this->load->view("_partials/head.php")  ?>
+  <?php $this->load->view("admin/_partials/head.php")  ?>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
-  <?php $this->load->view("_partials/navbar.php");  ?>
+  <?php $this->load->view("admin/_partials/navbar.php");  ?>
   <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="<?php echo base_url('assets'); ?>/vendor/AdminLTE-3.0.0-alpha/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">E-Payment Lulasari</span>
-    </a>
-
+ 
     <!-- Sidebar -->
-    <?php $this->load->view("_partials/sidebar.php");  ?>
+    <?php $this->load->view("admin/_partials/sidebar.php");  ?>
     <!-- /.sidebar -->
   </aside>
 
@@ -129,7 +121,7 @@
 </footer>
 -->
 <!-- footer-->
-<?php $this->load->view("_partials/footer.php");?>
+<?php $this->load->view("admin/_partials/footer.php");?>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -139,6 +131,6 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<?php $this->load->view("_partials/jquery.php");  ?>
+<?php $this->load->view("admin/_partials/jquery.php");  ?>
 </body>
 </html>

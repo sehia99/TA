@@ -9,6 +9,6 @@
  
      //Load Halaman dashboard
      public function index() {
-         $this->load->view('dasboard');
+         $this->load->view('admin/dasboard');
      }
  }

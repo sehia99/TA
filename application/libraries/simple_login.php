@@ -4,8 +4,6 @@
  /*
   * Simple_login Class
   * Class ini digunakan untuk fitur login, proteksi halaman dan logout
-  * @author  Gun Gun Priatna
-  * @url    https://recodeku.blogspot.com
   */
  
  class Simple_login {

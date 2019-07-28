@@ -11,4 +11,7 @@
      public function index() {
          $this->load->view('admin/dasboard');
      }
+     public function pegawe(){
+         $this->load->view('pegawe/dasboard');
+     }
  }

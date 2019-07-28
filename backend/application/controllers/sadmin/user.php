@@ -4,7 +4,7 @@
 class User extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model("m_sadmin");
+        $this->load->model("user/m_sadmin");
         $this->load->library('form_validation');
 
     }
@@ -48,7 +48,7 @@ class User extends CI_Controller{
         if(!isset($id)) show_404();
 
         if($this->m_sadmin->delete($id)){
-            redirect(site_url('admin'));
+            redirect(site_url('sadmin/user'));
         }
     }
 }

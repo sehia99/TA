@@ -41,9 +41,16 @@
              $this->CI->session->set_userdata('username', $username);
              $this->CI->session->set_userdata('id_login', uniqid(rand()));
              $this->CI->session->set_userdata('id', $id);
- 
+             //ambil data level
+            $rowlevel=$this->CI->db->query('SELECT levela FROM user where username="'.$username.'"');
+            $adminlevel=$rowlevel->row();
+            $levela=$adminlevel->levela;
              //redirect ke halaman dashboard
+             if($levela=='0'){
              redirect(site_url('dasboard'));
+             }elseif($levela=='1'){
+                 redirect(site_url('dasboard/pegawe'));
+             }
          }else{
  
              //jika tidak ada, set notifikasi dalam flashdata.

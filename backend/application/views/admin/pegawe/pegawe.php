@@ -43,62 +43,54 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <?php if ($this->session->flashdata('success')): ?>
-				<div class="alert alert-success" role="alert">
-					<?php echo $this->session->flashdata('success'); ?>
-				</div>
-				<?php endif; ?>
-
-				<div class="card mb-3">
+        <div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('sadmin/user/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+						<a href="<?php echo site_url('sadmin/pegawe/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url('sadmin/user/add') ?>" method="post" enctype="multipart/form-data" >
-							<div class="form-group">
-								<label for="username">Username*</label>
-								<input class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
-								 type="text" name="username" placeholder="Username" />
-								<div class="invalid-feedback">
-									<?php echo form_error('username') ?>
-								</div>
-							</div>
+						<div class="table-responsive">
+							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>Username</th>
+                                        <th>Nama</th>
+                                        <th>Alamat</th>
+                                        <th>No. HP</th>
+										<th>Email</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($user as $user): ?>
+									<tr>
+										<td width="150">
+											<?php echo $user->username ?>
+										</td>
+										<td>
+											<?php echo $user->nama ?>
+                                        </td>
+                                        <td class="small">
+											<?php echo substr($user->alamat, 0, 120) ?>...</td>
+										
+                                        <td>
+                                            <?php echo $user->no_hp ?>
+                                        </td>
+										<td>
+                                            <?php echo $user->email?>
+                                        </td>
+										<td width="250">
+											<a href="<?php echo site_url('sadmin/pegawe/edit/'.$user->id_user) ?>"
+											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+											<a onclick="deleteConfirm('<?php echo site_url('sadmin/pegawe/delete/'.$user->id_user) ?>')"
+											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+										</td>
+									</tr>
+									<?php endforeach; ?>
 
-							<div class="form-group">
-								<label for="nama">Nama*</label>
-								<input class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-								 type="text" name="nama" min="0" placeholder="Nama" />
-								<div class="invalid-feedback">
-									<?php echo form_error('nama') ?>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>"
-								 type="email" name="email" placeholder="Email" />
-								<div class="invalid-feedback">
-									<?php echo form_error('email') ?>
-								</div>
-                            </div>
-                            
-                            <div class="form-group">
-								<label for="password">Password</label>
-								<input class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
-								 type="password" name="password" placeholder="Password" />
-								<div class="invalid-feedback">
-									<?php echo form_error('password') ?>
-								</div>
-							</div>
-
-							<input class="btn btn-success" type="submit" name="btn" value="Save" />
-						</form>
-
-					</div>
-
-					<div class="card-footer small text-muted">
-						* required fields
+								</tbody>
+							</table>
+						</div>
 					</div>
           <!-- ./col -->
         </div>
@@ -129,5 +121,12 @@
 
 <!-- jQuery -->
 <?php $this->load->view("admin/_partials/jquery.php");  ?>
+<?php $this->load->view("admin/_partials/modal.php");?>
+<script>
+function deleteConfirm(url){
+	$('#btn-delete').attr('href', url);
+	$('#deleteModal').modal();
+}
+</script>
 </body>
 </html>

@@ -43,47 +43,66 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="card mb-3">
-					<div class="card-header">
-						<a href="<?php echo site_url('sadmin/user/add') ?>"><i class="fas fa-plus"></i> Add New</a>
-					</div>
-					<div class="card-body">
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
 
-						<div class="table-responsive">
-							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>Username</th>
-										<th>Nama</th>
-										<th>Email</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php foreach ($user as $user): ?>
-									<tr>
-										<td width="150">
-											<?php echo $user->username ?>
-										</td>
-										<td>
-											<?php echo $user->nama ?>
-										</td>
-										<td>
-                                            <?php echo $user->email?>
-                                        </td>
-										<td width="250">
-											<a href="<?php echo site_url('sadmin/user/edit/'.$user->id_user) ?>"
-											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('sadmin/user/delete/'.$user->id_user) ?>')"
-											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-										</td>
-									</tr>
-									<?php endforeach; ?>
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-								</tbody>
-							</table>
-						</div>
-					</div>
+                <p>Bounce Rate</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>65</h3>
+
+                <p>Unique Visitors</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
           <!-- ./col -->
         </div>
         <!-- /.row -->
